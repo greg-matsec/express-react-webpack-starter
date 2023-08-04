@@ -8,7 +8,7 @@ const IS_WATCH = !!process.env.WATCH;
 
 const resolveConfig = {
     symlinks: false,
-    extensions: ['.js', '.json', '.ts', '.tsx']
+    extensions: ['.js', '.json', '.jsx']
 };
 
 const includeDirs = ['src'].map(x => path.resolve(__dirname, x));
@@ -16,7 +16,7 @@ const includeDirs = ['src'].map(x => path.resolve(__dirname, x));
 const moduleConfig = (tscOptions = {}) => ({
     rules: [
         {
-            test: /\.(ts|tsx)$/,
+            test: /\.(js|jsx)$/,
             include: includeDirs,
             use: [
                 {
@@ -100,11 +100,11 @@ const backendBuild = (name, entryFile, outputFile = 'server.js') => {
 
 const availableProjects = {
 
-    frontend: frontendBuild('frontend', './src/frontend/main.ts', 'bundle.js'),
+    frontend: frontendBuild('frontend', './src/frontend/main.js', 'bundle.js'),
     
-    backend: backendBuild('backend', './src/backend/main.ts', 'server.js'),
+    backend: backendBuild('backend', './src/backend/main.js', 'server.js'),
     
-    test: backendBuild('test', './src/test.ts', 'test.js'),
+    test: backendBuild('test', './src/test.js', 'test.js'),
 
 };
 

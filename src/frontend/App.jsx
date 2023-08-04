@@ -1,17 +1,9 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 
-interface AppProps {
-    name: string;
-}
+export class App extends React.Component {
 
-interface AppState {
-    time: string;
-}
-
-export class App extends React.Component<AppProps, AppState> {
-
-    constructor(props: AppProps) {
+    constructor(props) {
         super(props);
         this.state = {
             time: null
@@ -29,7 +21,7 @@ export class App extends React.Component<AppProps, AppState> {
         return <><h1>{name}</h1><div>{time}</div></>;
     }
 
-    private getTime = async () => {
+    getTime = async () => {
         const response = await fetch('/api/time', { method: 'GET' });
         if (response.ok) {
             this.setState({time: await response.text()});

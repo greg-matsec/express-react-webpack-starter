@@ -2,7 +2,7 @@
 A starter Webpack 4 configuration for basic projects with Express and React.
 
 ## Features
-- Build single page web apps with typescript.
+- Build single page web apps with javascript.
 
 ## Dependencies
 - Install `node`
@@ -33,5 +33,4 @@ A starter Webpack 4 configuration for basic projects with Express and React.
 - Remove all the generated files: `yarn clean`
 
 ## Useful links
-- Typescript guide: https://basarat.gitbook.io/typescript/
 - VSCode custom settings: https://github.com/gianluca-venturini/env_confs/tree/master/vs_codet
